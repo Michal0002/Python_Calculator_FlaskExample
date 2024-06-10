@@ -23,7 +23,7 @@ def calculate():
         number2 = float(number2)
 
         operation = request.form.get('operation')
-        operations = ('add', 'subtract', 'multiply','divide')
+        operations = ('add', 'subtract', 'multiply','divide', 'exponentiation')
 
         if operation not in operations:
             return "Invalid operation"
@@ -40,6 +40,8 @@ def calculate():
                 result = "Cannot divide by 0"
             else:
                 result = (number1 / number2)
+        elif operation == 'exponentiation':
+            result = int(number1**number2)
         else:
             result = "Incorrect operation"
 
